@@ -48,59 +48,23 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-
-            <!--数据库文档插件-->
-            <!--            <plugin>-->
-            <!--                <groupId>cn.smallbun.screw</groupId>-->
-            <!--                <artifactId>screw-maven-plugin</artifactId>-->
-            <!--                <version>1.0.5</version>-->
-            <!--                <dependencies>-->
-            <!--                    &lt;!&ndash; HikariCP &ndash;&gt;-->
-            <!--                    <dependency>-->
-            <!--                        <groupId>com.zaxxer</groupId>-->
-            <!--                        <artifactId>HikariCP</artifactId>-->
-            <!--                        <version>3.4.5</version>-->
-            <!--                    </dependency>-->
-            <!--                    &lt;!&ndash;mysql driver&ndash;&gt;-->
-            <!--                    <dependency>-->
-            <!--                        <groupId>mysql</groupId>-->
-            <!--                        <artifactId>mysql-connector-java</artifactId>-->
-            <!--                        <version>8.0.20</version>-->
-            <!--                    </dependency>-->
-            <!--                </dependencies>-->
-            <!--                <configuration>-->
-            <!--                    &lt;!&ndash;username&ndash;&gt;-->
-            <!--                    <username>root</username>-->
-            <!--                    &lt;!&ndash;password&ndash;&gt;-->
-            <!--                    <password>123456</password>-->
-            <!--                    &lt;!&ndash;driver&ndash;&gt;-->
-            <!--                    <driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>-->
-            <!--                    &lt;!&ndash;jdbc url&ndash;&gt;-->
-            <!--                    <jdbcUrl>jdbc:mysql://yong-deepin:3308/mebact</jdbcUrl>-->
-            <!--                    &lt;!&ndash;生成文件类型&ndash;&gt;-->
-            <!--                    <fileType>MD</fileType>-->
-            <!--                    &lt;!&ndash;打开文件输出目录&ndash;&gt;-->
-            <!--                    <openOutputDir>false</openOutputDir>-->
-            <!--                    &lt;!&ndash;生成模板&ndash;&gt;-->
-            <!--                    <produceType>freemarker</produceType>-->
-            <!--                    &lt;!&ndash;文档名称 为空时:将采用[数据库名称-描述-版本号]作为文档名称&ndash;&gt;-->
-            <!--                    <fileName>招行数据库字段说明文档</fileName>-->
-            <!--                    &lt;!&ndash;描述&ndash;&gt;-->
-            <!--                    <description>数据库文档生成</description>-->
-            <!--                    &lt;!&ndash;版本&ndash;&gt;-->
-            <!--                    <version>${project.version}</version>-->
-            <!--                    &lt;!&ndash;标题&ndash;&gt;-->
-            <!--                    <title>数据库文档</title>-->
-            <!--                </configuration>-->
-            <!--                <executions>-->
-            <!--                    <execution>-->
-            <!--                        <phase>compile</phase>-->
-            <!--                        <goals>-->
-            <!--                            <goal>run</goal>-->
-            <!--                        </goals>-->
-            <!--                    </execution>-->
-            <!--                </executions>-->
-            <!--            </plugin>-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.7.RELEASE</version>
+                <configuration>
+                    <mainClass>com.example.demo.DemoApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>repackage</id>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+           </plugin>
+            
         </plugins>
         <finalName>demomvn</finalName>
     </build>
